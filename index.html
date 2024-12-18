@@ -3,213 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Page</title>
+    <title>SpaceX Welcome</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.independent.co.uk%2Fnews%2Fscience%2Fspacex-sea-landing-successful-video-falcon-9-elon-musk-a7016171.html&psig=AOvVaw0yAlDQ9eH951FjDpABN9Wx&ust=1734606346202000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCV06qWsYoDFQAAAAAdAAAAABAJ') no-repeat center center fixed;
+            background: url('spacex-background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #333;
-            padding: 20px;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .form-group input[type="file"] {
-            padding: 5px;
-        }
-
-        .form-group .upload-box {
-            border: 1px dashed #ccc;
-            padding: 10px;
-            text-align: center;
-            background: #f9f9f9;
-        }
-
-        .form-group .upload-box:hover {
-            background: #f1f1f1;
-        }
-
-        .form-group .payout-method {
+            height: 100vh;
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-
-        .form-group .payout-method img {
-            width: 30px;
-            height: auto;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background: #007bff;
-            color: #fff;
+        .continue-button {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            background-color: #1a73e8;
+            color: white;
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .submit-btn:hover {
-            background: #0056b3;
-        }
-
-        .success-message {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
             font-size: 18px;
-            color: green;
+            cursor: pointer;
+        }
+        .continue-button:hover {
+            background-color: #155bb5;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Fill Out This Form</h1>
-        <form id="registration-form">
-            <div class="form-group">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" name="dob" required>
-            </div>
-
-            <div class="form-group">
-                <label for="country">Country</label>
-                <select id="country" name="country" required>
-                    <option value="">Select Country</option>
-                    <option value="BD">Bangladesh (+880)</option>
-                    <option value="US">United States (+1)</option>
-                    <option value="UK">United Kingdom (+44)</option>
-                    <option value="IN">India (+91)</option>
-                    <option value="AU">Australia (+61)</option>
-                    <option value="CA">Canada (+1)</option>
-                    <option value="CN">China (+86)</option>
-                    <option value="FR">France (+33)</option>
-                    <option value="DE">Germany (+49)</option>
-                    <option value="IT">Italy (+39)</option>
-                    <option value="JP">Japan (+81)</option>
-                    <option value="MX">Mexico (+52)</option>
-                    <option value="NG">Nigeria (+234)</option>
-                    <option value="PK">Pakistan (+92)</option>
-                    <option value="PH">Philippines (+63)</option>
-                    <option value="RU">Russia (+7)</option>
-                    <option value="SA">Saudi Arabia (+966)</option>
-                    <option value="ZA">South Africa (+27)</option>
-                    <option value="KR">South Korea (+82)</option>
-                    <option value="ES">Spain (+34)</option>
-                    <option value="SE">Sweden (+46)</option>
-                    <option value="TR">Turkey (+90)</option>
-                    <option value="AE">United Arab Emirates (+971)</option>
-                    <!-- Add more countries as needed -->
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="mobile">Mobile Number</label>
-                <input type="text" id="mobile" name="mobile" required>
-            </div>
-
-            <div class="form-group">
-                <label for="snid">SNID Number</label>
-                <input type="text" id="snid" name="snid" required>
-            </div>
-
-            <div class="form-group">
-                <label for="snid-front">Upload Front Side of SNID</label>
-                <input type="file" id="snid-front" name="snid-front" accept="image/*" required>
-            </div>
-
-            <div class="form-group">
-                <label for="snid-back">Upload Back Side of SNID</label>
-                <input type="file" id="snid-back" name="snid-back" accept="image/*" required>
-            </div>
-
-            <div class="form-group">
-                <label for="passport-photo">Passport Size Photo</label>
-                <input type="file" id="passport-photo" name="passport-photo" accept="image/*" required>
-            </div>
-
-            <div class="form-group">
-                <label for="aliveness-video">Aliveness Proof (Video Clip)</label>
-                <input type="file" id="aliveness-video" name="aliveness-video" accept="video/*" required>
-            </div>
-
-            <div class="form-group">
-                <label for="payout-method">Payout Method</label>
-                <select id="payout-method" name="payout-method" required>
-                    <option value="">Select Payout Method</option>
-                    <option value="nagad">Nagad</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="payoneer">Payoneer</option>
-                    <option value="u-cash">U Cash</option>
-                    <option value="western-union">Western Union</option>
-                    <option value="bank">Bank</option>
-                    <option value="visa">Visa</option>
-                    <option value="master-card">Master Card</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="facebook-url">Facebook Profile URL</label>
-                <input type="url" id="facebook-url" name="facebook-url">
-            </div>
-
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
-        <div class="success-message" id="success-message">
-            Congratulations! We will let you know in short. -Thanks
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('registration-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('success-message').style.display = 'block';
-        });
-    </script>
+    <h1>Welcome to SpaceX</h1>
+    <a href="form_page.html" class="continue-button">Continue</a>
 </body>
 </html>
